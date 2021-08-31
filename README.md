@@ -8,3 +8,6 @@ If you fail to jump over them in time, then you die and respawn. The global time
 2. Dying
 3. Highscore
 4. Speed increase
+
+# Reference image
+https://miro.medium.com/max/2000/1*24LcUr--WQJpjTr8K_jAeg.png
