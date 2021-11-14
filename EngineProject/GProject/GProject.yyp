@@ -1,5 +1,9 @@
 {
   "resources": [
+    {"id":{"name":"OBJ_CUBE","path":"objects/OBJ_CUBE/OBJ_CUBE.yy",},"order":0,},
+    {"id":{"name":"SPR_DUMMY_PLAYER","path":"sprites/SPR_DUMMY_PLAYER/SPR_DUMMY_PLAYER.yy",},"order":1,},
+    {"id":{"name":"OBJ_DUMMY_PLAYER","path":"objects/OBJ_DUMMY_PLAYER/OBJ_DUMMY_PLAYER.yy",},"order":1,},
+    {"id":{"name":"SP_CUBE","path":"sprites/SP_CUBE/SP_CUBE.yy",},"order":0,},
     {"id":{"name":"R_MAIN","path":"rooms/R_MAIN/R_MAIN.yy",},"order":0,},
   ],
   "Options": [
