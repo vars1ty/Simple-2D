@@ -1,2 +1,2 @@
 /// @description Moves to the right when holding D
-x += force;
+if (OBJ_MANAGER.state != 2) x += force;

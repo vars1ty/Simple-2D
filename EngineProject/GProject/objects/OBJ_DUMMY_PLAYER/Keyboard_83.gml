@@ -1,2 +1,2 @@
 /// @description Moves down when holding S
-y += force;
+if (OBJ_MANAGER.state != 2) y += force;

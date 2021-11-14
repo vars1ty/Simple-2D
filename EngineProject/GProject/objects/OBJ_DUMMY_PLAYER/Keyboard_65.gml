@@ -1,2 +1,2 @@
 /// @description Moves to the left when holding A
-x -= force;
+if (OBJ_MANAGER.state != 2) x -= force;
