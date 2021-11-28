@@ -3,13 +3,18 @@
     {"id":{"name":"OBJ_MANAGER","path":"objects/OBJ_MANAGER/OBJ_MANAGER.yy",},"order":2,},
     {"id":{"name":"OBJ_CUBE","path":"objects/OBJ_CUBE/OBJ_CUBE.yy",},"order":0,},
     {"id":{"name":"SPR_DUMMY_PLAYER","path":"sprites/SPR_DUMMY_PLAYER/SPR_DUMMY_PLAYER.yy",},"order":1,},
+    {"id":{"name":"SPR_B_START","path":"sprites/SPR_B_START/SPR_B_START.yy",},"order":2,},
     {"id":{"name":"OBJ_DUMMY_PLAYER","path":"objects/OBJ_DUMMY_PLAYER/OBJ_DUMMY_PLAYER.yy",},"order":1,},
+    {"id":{"name":"R_START","path":"rooms/R_START/R_START.yy",},"order":1,},
     {"id":{"name":"SP_CUBE","path":"sprites/SP_CUBE/SP_CUBE.yy",},"order":0,},
+    {"id":{"name":"OBJ_B_START","path":"objects/OBJ_B_START/OBJ_B_START.yy",},"order":3,},
     {"id":{"name":"R_MAIN","path":"rooms/R_MAIN/R_MAIN.yy",},"order":0,},
   ],
   "Options": [
     {"name":"Main","path":"options/main/options_main.yy",},
     {"name":"Windows","path":"options/windows/options_windows.yy",},
+    {"name":"Linux","path":"options/linux/options_linux.yy",},
+    {"name":"macOS","path":"options/mac/options_mac.yy",},
   ],
   "isDnDProject": false,
   "isEcma": false,
@@ -19,6 +24,7 @@
     "children": [],
   },
   "RoomOrderNodes": [
+    {"roomId":{"name":"R_START","path":"rooms/R_START/R_START.yy",},},
     {"roomId":{"name":"R_MAIN","path":"rooms/R_MAIN/R_MAIN.yy",},},
   ],
   "Folders": [
@@ -45,7 +51,7 @@
   ],
   "IncludedFiles": [],
   "MetaData": {
-    "IDEVersion": "2.3.6.595",
+    "IDEVersion": "2.3.7.603",
   },
   "resourceVersion": "1.4",
   "name": "GProject",
