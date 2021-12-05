@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "SP_CUBE",
-    "path": "sprites/SP_CUBE/SP_CUBE.yy",
+    "name": "SPR_SPIKE",
+    "path": "sprites/SPR_SPIKE/SPR_SPIKE.yy",
   },
   "solid": false,
   "visible": true,
@@ -19,20 +19,25 @@
   "physicsFriction": 0.2,
   "physicsStartAwake": true,
   "physicsKinematic": false,
-  "physicsShapePoints": [],
+  "physicsShapePoints": [
+    {"x":0.0,"y":0.0,},
+    {"x":68.0,"y":0.0,},
+    {"x":68.0,"y":36.0,},
+    {"x":0.0,"y":36.0,},
+  ],
   "eventList": [
+    {"isDnD":false,"eventNum":0,"eventType":3,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
+    {"isDnD":false,"eventNum":0,"eventType":4,"collisionObjectId":{"name":"OBJ_DUMMY_PLAYER","path":"objects/OBJ_DUMMY_PLAYER/OBJ_DUMMY_PLAYER.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
     {"isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
   ],
-  "properties": [
-    {"varType":2,"value":"****************","rangeEnabled":false,"rangeMin":0.0,"rangeMax":10.0,"listItems":[],"multiselect":false,"filters":[],"resourceVersion":"1.0","name":"separator","tags":[],"resourceType":"GMObjectProperty",},
-  ],
+  "properties": [],
   "overriddenProperties": [],
   "parent": {
     "name": "Objects",
     "path": "folders/Objects.yy",
   },
   "resourceVersion": "1.0",
-  "name": "OBJ_CUBE",
+  "name": "OBJ_SPIKE",
   "tags": [],
   "resourceType": "GMObject",
 }
