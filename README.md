@@ -1,5 +1,5 @@
 # Simple 2D
 ## What is it?
-A simple 2D Game made in GMS & GML for learning purposes.
+A simple 2D Game made in GMS & GML for learning purposes only.
 ***
-`qqt#8333`
+Revolt.chat: 
