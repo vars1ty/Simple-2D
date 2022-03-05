@@ -7,15 +7,18 @@ if (state >= 0) draw_set_halign(fa_center);
 switch (state)
 {
 	case 0:
-	  // * Skip
+	  // ! Skip, no logic needed
 	case 1:
 	  // * Active
+	  // ? Set the text color to white
 	  draw_set_color(c_white);
+	  // ? Draw the text
 	  draw_text(rx, ry, elapsedTime);
     break;
 	case 2:
 	  // * Dead
 	  draw_set_color(c_red);
-	  draw_text(rx, ry, "Nice, you timed " + string(elapsedTime) + "s!\nPress ENTER to continue");
+	  draw_text(rx, ry, "You timed " + string(elapsedTime) + "s, congrats!\nPress ENTER to continue.");
+	  // TODO: Add high-score checks here (Issue #8)
 	break;
 }
