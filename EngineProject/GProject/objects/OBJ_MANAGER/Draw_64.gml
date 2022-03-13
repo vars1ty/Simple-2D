@@ -13,7 +13,7 @@ switch (state)
 	  // ? Set the text color to white
 	  draw_set_color(c_white);
 	  // ? Draw the text
-	  draw_text(rx, ry, elapsedTime);
+	  draw_text(rx, ry, string(elapsedTime) + "\nBest: " + string(OBJ_MANAGER.bestScore));
     break;
 	case 2:
 	  // * Dead
