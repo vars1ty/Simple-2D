@@ -5,7 +5,8 @@
 // * 2 = Dead
 state = 1;
 var file;
-show_debug_message("Git Project: Simple-2D :: https://github.com/qqtc0/Simple-2D/");
+show_debug_message("Git Project: Simple-2D » https://github.com/qqtc0/Simple-2D/");
+show_debug_message("Made by narcotics#0911");
 // ! Check if the high-score file is present.
 if (!file_exists(hsFile))
 {
