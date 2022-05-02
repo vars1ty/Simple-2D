@@ -2,6 +2,7 @@
   "resources": [
     {"id":{"name":"OBJ_SPIKE","path":"objects/OBJ_SPIKE/OBJ_SPIKE.yy",},"order":4,},
     {"id":{"name":"OBJ_MANAGER","path":"objects/OBJ_MANAGER/OBJ_MANAGER.yy",},"order":2,},
+    {"id":{"name":"Sprite8","path":"sprites/Sprite8/Sprite8.yy",},"order":15,},
     {"id":{"name":"SPR_SPIKE","path":"sprites/SPR_SPIKE/SPR_SPIKE.yy",},"order":3,},
     {"id":{"name":"SPR_APPLE","path":"sprites/SPR_APPLE/SPR_APPLE.yy",},"order":6,},
     {"id":{"name":"OBJ_APPLE","path":"objects/OBJ_APPLE/OBJ_APPLE.yy",},"order":7,},
