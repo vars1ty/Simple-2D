@@ -1,6 +1,6 @@
-/// @description Called during the games lifespan
+/// @description Called during the players lifespan
 // * Prevents the player from going outside the canvas
-if (x >= 0 && x <= room_width - 35) return;
+if (x >= 0 && x <= room_width - 35 && y >= 0 && y <= room_height - 35) return;
 OBJ_MANAGER.state = 2;
 var currentScore = OBJ_MANAGER.elapsedTime;
 if (currentScore <= OBJ_MANAGER.bestScore) return; // ! <= The score was either lower or same as the current best score, therefore ignore it.

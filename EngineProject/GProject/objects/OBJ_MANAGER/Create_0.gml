@@ -6,7 +6,10 @@
 state = 1;
 var file;
 show_debug_message("Git Project: Simple-2D » https://github.com/qqtc0/Simple-2D/");
-show_debug_message("Made by devin#0911");
+show_debug_message("Made by devin#8415");
+// ! Cache the rooms width, both inverted and normal.
+rngMin = -room_width;
+rngMax = room_width;
 // ! Check if the high-score file is present.
 if (!file_exists(hsFile))
 {
