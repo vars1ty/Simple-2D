@@ -11,6 +11,9 @@
 /[Uu]ser[Ss]ettings/
 /.idea/
 
+# Ignore the Buld Slave Win directory
+/[Bb]uild[Ss]lave[Ww]in/
+
 # MemoryCaptures can get excessive in size.
 # They also could contain extremely sensitive data
 /[Mm]emoryCaptures/
