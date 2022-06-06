@@ -1,7 +1,8 @@
 using Player;
 using UnityEngine;
 
-public class SpikeDespawner : MonoBehaviour
+[DisallowMultipleComponent]
+internal class SpikeDespawner : MonoBehaviour
 {
     #region Variables
     /// <summary> Cached Transform for better performance. </summary>

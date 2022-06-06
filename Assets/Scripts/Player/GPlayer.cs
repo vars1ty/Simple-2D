@@ -1,3 +1,4 @@
+using Misc;
 using UnityEngine;
 
 namespace Player
@@ -23,6 +24,11 @@ namespace Player
         private Transform cachedTransform;
 
         /// <summary>
+        /// Player instance.
+        /// </summary>
+        private static GPlayer instance;
+
+        /// <summary>
         /// Player position.
         /// </summary>
         private Vector3 position;
@@ -30,14 +36,33 @@ namespace Player
         #endregion
 
         /// <summary>
-        /// Cache the <c>transform</c>.
+        /// Cache the <c>transform</c> and <see cref="instance"/>.
         /// </summary>
-        private void Start() => cachedTransform = transform;
+        private void Start()
+        {
+            cachedTransform = transform;
+            instance = this;
+        }
+
+        /// <summary>
+        /// Respawns the player.
+        /// </summary>
+        private void RespawnPlayer()
+        {
+            GTimer.currentSeconds = 0;
+            GTimer.bestScore = GFS.GetSavedScore();
+            isPlayerAlive = true;
+            instance.cachedTransform.position = new Vector3(0, -2, 0);
+        }
 
         /// <summary>
         /// Kills the player.
         /// </summary>
-        public static void KillPlayer() => isPlayerAlive = false;
+        private void KillPlayer()
+        {
+            isPlayerAlive = false;
+            GFS.SaveScore();
+        }
 
         /// <summary>
         /// Is the player alive?
@@ -50,9 +75,22 @@ namespace Player
         /// </summary>
         private void LateUpdate()
         {
-            if (!isPlayerAlive) return;
-            position = cachedTransform.position;
+            if (!isPlayerAlive)
+            {
+                if (Input.GetKeyDown(KeyCode.E)) RespawnPlayer();
+                return;
+            }
+
+            OnHandleInput();
             OnCheckCanvas();
+        }
+
+        /// <summary>
+        /// Handles the player input.
+        /// </summary>
+        private void OnHandleInput()
+        {
+            position = cachedTransform.position;
             if (Input.GetKey(KeyCode.W)) position.y += speed;
             if (Input.GetKey(KeyCode.S)) position.y -= speed;
             if (Input.GetKey(KeyCode.A)) position.x -= speed;
@@ -63,8 +101,7 @@ namespace Player
         /// <summary>
         /// Called whenever the player collides with something.
         /// </summary>
-        /// <param name="col"></param>
-        private void OnCollisionEnter2D(Collision2D col) => KillPlayer();
+        private void OnCollisionEnter2D() => KillPlayer();
 
         /// <summary>
         /// Makes sure the player is always in view and never outside the canvas.
