@@ -32,9 +32,13 @@ namespace Player
         #endregion
 
         /// <summary>
-        /// Cache the <c>transform</c>.
+        /// Called upon startup.
         /// </summary>
-        private void Start() => cachedTransform = transform;
+        private void Start()
+        {
+            cachedTransform = transform;
+            GTimer.bestScore = GFS.GetSavedScore();
+        }
 
         /// <summary>
         /// Respawns the player.
@@ -100,8 +104,10 @@ namespace Player
         /// </summary>
         private void OnCheckCanvas()
         {
-            if (position is {x: >= 8.1f or <= -8.1f}) position.x = MathUtils.Clamp(position.x, -8.1f, 8.1f);
-            if (position is {y: >= 4.8f or <= -4.8f}) position.y = MathUtils.Clamp(position.y, -4.8f, 4.8f);
+            var pos = cachedTransform.position;
+            if (pos is {x: >= 8.1f or <= -8.1f}) pos.x = MathUtils.Clamp(position.x, -8.1f, 8.1f);
+            if (pos is {y: >= 4.8f or <= -4.8f}) pos.y = MathUtils.Clamp(position.y, -4.8f, 4.8f);
+            cachedTransform.position = pos;
         }
     }
 }
