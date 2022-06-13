@@ -2,7 +2,7 @@ using System.Collections;
 using Player;
 using UnityEngine;
 
-[DisallowMultipleComponent]
+[DisallowMultipleComponent, AddComponentMenu("Simple-2D/Systems/Obstacle Spawner")]
 internal class ObstacleSpawner : MonoBehaviour
 {
     #region Variables

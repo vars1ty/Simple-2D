@@ -1,5 +1,6 @@
 using Misc;
 using UnityEngine;
+using Utils;
 
 namespace Player
 {
@@ -14,19 +15,14 @@ namespace Player
         private static bool isPlayerAlive = true;
 
         /// <summary>
-        /// Player movement speed.
-        /// </summary>
-        private const float speed = .004f;
-
-        /// <summary>
-        /// This transform but cached so we can skip C# -> C++ -> C# calls.
+        /// This transform but cached so we can skip C# -> C++ (Native) -> C# calls.
         /// </summary>
         private Transform cachedTransform;
 
         /// <summary>
-        /// Player instance.
+        /// Player movement speed.
         /// </summary>
-        private static GPlayer instance;
+        private const byte speed = 5;
 
         /// <summary>
         /// Player position.
@@ -36,13 +32,9 @@ namespace Player
         #endregion
 
         /// <summary>
-        /// Cache the <c>transform</c> and <see cref="instance"/>.
+        /// Cache the <c>transform</c>.
         /// </summary>
-        private void Start()
-        {
-            cachedTransform = transform;
-            instance = this;
-        }
+        private void Start() => cachedTransform = transform;
 
         /// <summary>
         /// Respawns the player.
@@ -52,7 +44,7 @@ namespace Player
             GTimer.currentSeconds = 0;
             GTimer.bestScore = GFS.GetSavedScore();
             isPlayerAlive = true;
-            instance.cachedTransform.position = new Vector3(0, -2, 0);
+            cachedTransform.position = new Vector3(0, -2, 0);
         }
 
         /// <summary>
@@ -91,10 +83,10 @@ namespace Player
         private void OnHandleInput()
         {
             position = cachedTransform.position;
-            if (Input.GetKey(KeyCode.W)) position.y += speed;
-            if (Input.GetKey(KeyCode.S)) position.y -= speed;
-            if (Input.GetKey(KeyCode.A)) position.x -= speed;
-            if (Input.GetKey(KeyCode.D)) position.x += speed;
+            if (Input.GetKey(KeyCode.W)) position.y += Time.deltaTime * speed;
+            if (Input.GetKey(KeyCode.S)) position.y -= Time.deltaTime * speed;
+            if (Input.GetKey(KeyCode.A)) position.x -= Time.deltaTime * speed;
+            if (Input.GetKey(KeyCode.D)) position.x += Time.deltaTime * speed;
             cachedTransform.position = position;
         }
 
@@ -108,8 +100,8 @@ namespace Player
         /// </summary>
         private void OnCheckCanvas()
         {
-            if (position is {x: >= 8.1f or <= -8.1f}) position.x = Mathf.Clamp(position.x, -8.1f, 8.1f);
-            if (position is {y: >= 4.8f or <= -4.8f}) position.y = Mathf.Clamp(position.y, -4.8f, 4.8f);
+            if (position is {x: >= 8.1f or <= -8.1f}) position.x = MathUtils.Clamp(position.x, -8.1f, 8.1f);
+            if (position is {y: >= 4.8f or <= -4.8f}) position.y = MathUtils.Clamp(position.y, -4.8f, 4.8f);
         }
     }
 }

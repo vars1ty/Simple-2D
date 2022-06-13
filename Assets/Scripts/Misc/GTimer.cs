@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace Misc
 {
-    [DisallowMultipleComponent]
+    [DisallowMultipleComponent, AddComponentMenu("Simple-2D/Misc/GTimer")]
     internal class GTimer : MonoBehaviour
     {
         #region Variables

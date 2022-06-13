@@ -1,7 +1,7 @@
 using Player;
 using UnityEngine;
 
-[DisallowMultipleComponent]
+[DisallowMultipleComponent, AddComponentMenu("Simple-2D/Systems/Spike Despawner")]
 internal class SpikeDespawner : MonoBehaviour
 {
     #region Variables
@@ -21,14 +21,14 @@ internal class SpikeDespawner : MonoBehaviour
     /// <summary> Moves the spike downwards. </summary>
     private void Update()
     {
-        if (cachedTransform.position is {y: <= -5.2f} && !hasDestroyed)
+        if ((!GPlayer.IsPlayerAlive() || cachedTransform.position is {y: <= -5.2f}) && !hasDestroyed)
         {
             Destroy(gameObject);
             hasDestroyed = true;
             return;
         }
 
-        if (hasDestroyed || !GPlayer.IsPlayerAlive()) return;
+        if (hasDestroyed) return;
         currentLocal = cachedTransform.localPosition;
         cachedTransform.localPosition = Vector3.Lerp(currentLocal,
             new Vector3(currentLocal.x, currentLocal.y - .5f, currentLocal.z), Time.deltaTime * 5);
